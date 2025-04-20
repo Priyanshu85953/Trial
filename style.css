@@ -11,11 +11,11 @@
     color: #fff;
     cursor: pointer;
     float: left;
-	height: 33px;
+    height: 33px;
     font-size: 16px;
     font-weight: normal;
     margin-right: 2px;
-	margin-top: 10px;
+    margin-top: 10px;
     text-align: center;
     padding-top: 12px;
     background: url("https://www.digialm.com/OnlineAssessment/images/questions-sprite.png") no-repeat;
@@ -163,9 +163,9 @@ header img {
 }
 #question_area_scrollable {
     background-image: url("download.png");
-    overflow-y: auto; /* Change to auto to show scrollbar only when needed */
-    max-height: 70vh; /* Set a maximum height relative to viewport height */
-    padding-bottom: 20px; /* Add padding to ensure content at the bottom is accessible */
+    overflow-y: auto;
+    max-height: 70vh;
+    padding-bottom: 300px; /* Increased padding to ensure space below option D */
 }
 /* Styles for desktop using media queries */
 @media (min-width: 1024px) {
@@ -175,7 +175,11 @@ header img {
     }
 
     #question_area_scrollable {
-        height: 400px;
+        max-height: 400px;
+        padding-bottom: 100px; /* Consistent padding for desktop */
+    }
+    .question {
+        margin-bottom: 100px; /* Consistent margin for desktop */
     }
 }
 .question-title{
@@ -369,14 +373,16 @@ header img {
 	display: inline-block;
 
 }
+/* Make palette buttons scrollable */
 #palette-list {
-    flex-wrap: wrap; /* Wrap items if they overflow */
-    justify-content: start; /* Align items to the start */
-    gap: 10px; /* Spacing between items */
-    padding: 10px; /* Optional: Padding inside the container */
-	margin-top: 12px;
-	overflow: auto;
-	display: inline-block;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 10px;
+    padding: 10px;
+    margin-top: 12px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 300px; /* Set a maximum height for the palette */
+    display: inline-block;
 }
 
 
@@ -552,6 +558,7 @@ body {
 }
 
 .question {
+    margin-bottom: 100px; /* Added margin to push content away from buttons */
     font-size: 17px;
     margin: 20px;
 }
@@ -560,7 +567,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px; /* Add space between each option */
-    margin-bottom: 20px; /* Space after the options */
+    margin-bottom: 100px; /* Space after the options */
 }
 .answers label {
     display: flex;
